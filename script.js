@@ -73,8 +73,12 @@ document.addEventListener('DOMContentLoaded',function(){
   function stopMusic(){ const a=ensureBgm(); a.pause(); musicOn=false }
   table.querySelectorAll('th').forEach(th=>th.addEventListener('click',()=>{const key=th.dataset.key;if(sortKey===key)sortDir=sortDir==='asc'?'desc':'asc';else{sortKey=key;sortDir='asc'}render()}));
   search.addEventListener('input',()=>{page=1;render()});
-  prev.addEventListener('click',()=>{ripple(prev);page=Math.max(1,page-1);render();animatePage()});
-  next.addEventListener('click',()=>{ripple(next);page=page+1;render();animatePage()});
+  function goPrev(){ ripple(prev); page=Math.max(1,page-1); render(); animatePage() }
+  function goNext(){ ripple(next); page=page+1; render(); animatePage() }
+  prev.addEventListener('click',goPrev);
+  next.addEventListener('click',goNext);
+  prev.addEventListener('touchend',goPrev,{passive:true});
+  next.addEventListener('touchend',goNext,{passive:true});
   if(btnBack){btnBack.addEventListener('click',()=>{stopMusic();window.location.href='index.html'})}
   function emojiRain(){if(!rain)return;const list=['🎉','✨','🚀','🔋','⚡','🌟','🎊','💡','🪐'];for(let i=0;i<28;i++){const s=document.createElement('span');s.className='emo';s.textContent=list[Math.floor(Math.random()*list.length)];s.style.left=Math.random()*100+'%';s.style.fontSize=(18+Math.random()*18)+'px';s.style.animationDuration=(6+Math.random()*6)+'s';s.style.animationDelay=(Math.random()*4)+'s';rain.appendChild(s)} }
   emojiRain();

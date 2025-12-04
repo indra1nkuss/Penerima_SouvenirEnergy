@@ -27,6 +27,7 @@ opacity:.6;animation:twinkle 3s ease-in-out infinite alternate}
 @keyframes glow{0%{opacity:.4;filter:drop-shadow(0 0 6px rgba(0,231,255,.5))}100%{opacity:1;filter:drop-shadow(0 0 12px rgba(255,62,240,.6))}}
 .container{max-width:1100px;margin:0 auto;padding:32px 20px}
 .card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px);border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.card{-webkit-backdrop-filter:blur(10px)}
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:48px;animation:reveal .8s ease both}
 @media (max-width:900px){.hero{grid-template-columns:1fr;padding:32px}}
 .title{font-size:clamp(28px,5vw,48px);line-height:1.1}
@@ -52,7 +53,7 @@ opacity:.6;animation:twinkle 3s ease-in-out infinite alternate}
 .champion{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:12px}
 .champion .cup{font-size:clamp(32px,7vw,56px);animation:cupGlow 2.8s ease-in-out infinite}
 .champion .label{font-weight:700;letter-spacing:.3px;color:var(--text);text-shadow:0 0 8px rgba(0,231,255,.4),0 0 14px rgba(255,62,240,.3);font-size:clamp(16px,3.5vw,22px)}
-@keyframes cupGlow{0%{filter:drop-shadow(0 0 6px rgba(0,231,255,.6))}50%{filter:drop-shadow(0 0 12px rgba(75,255,136,.7))}100%{filter:drop-shadow(0 0 6px rgba(255,62,240,.6))}}
+@keyframes cupGlow{0%{filter:drop-shadow(0 0 6px rgba(0,231,255,.6));-webkit-filter:drop-shadow(0 0 6px rgba(0,231,255,.6))}50%{filter:drop-shadow(0 0 12px rgba(75,255,136,.7));-webkit-filter:drop-shadow(0 0 12px rgba(75,255,136,.7))}100%{filter:drop-shadow(0 0 6px rgba(255,62,240,.6));-webkit-filter:drop-shadow(0 0 6px rgba(255,62,240,.6))}}
 .header{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:16px}
 .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .input,.select{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:var(--text);padding:12px 14px;border-radius:12px;min-width:220px;outline:none}
@@ -69,10 +70,11 @@ tbody tr:hover{background:rgba(255,255,255,.06);transform:translateX(2px)}
 .badgeDept{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(75,255,136,.14);color:#caffda;border:1px solid rgba(75,255,136,.35);font-size:13px}
 .footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px}
 .pager{display:flex;gap:8px}
-.pager button{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:var(--text);position:relative;overflow:hidden;transition:.2s transform,.2s box-shadow}
+.pager button{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:var(--text);position:relative;overflow:hidden;transition:.2s transform,.2s box-shadow;-webkit-tap-highlight-color:transparent}
+.pager button:disabled{opacity:.5;cursor:not-allowed}
 .pager button:hover{transform:translateY(-1px);box-shadow:0 8px 16px rgba(0,0,0,.25)}
 .pager button:active{transform:scale(.98)}
-.pager button .rpl{position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;background:rgba(0,231,255,.35);transform:translate(-50%,-50%) scale(0);animation:ripple .5s ease-out forwards;pointer-events:none}
+.pager button .rpl{position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;background:rgba(0,231,255,.35);transform:translate(-50%,-50%) scale(0);animation:ripple .5s ease-out forwards;pointer-events:none;will-change:transform,opacity}
 @keyframes ripple{to{transform:translate(-50%,-50%) scale(20);opacity:0}}
 .stat{color:var(--muted);font-size:14px}
 .stat.pulse{animation:pulseStatus .3s ease-out}
