@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar Pemenang • Efisiensi Energi 2025</title>
+  <meta name="description" content="Daftar pemenang Training Online Efisiensi Energi 2025">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stage">
+    <div class="grad"></div>
+    <div class="stars"></div>
+    <div class="grid"></div>
+    <div class="scanlines"></div>
+    <div class="particles" id="particles"></div>
+  </div>
+  <div id="parallax"></div>
+  <canvas id="confetti"></canvas>
+  <div class="container">
+    <section class="section active">
+      <div class="card winners">
+        <div class="header">
+          <div style="display:flex;gap:12px;align-items:center">
+            <button class="btn secondary" id="btnBack">Kembali</button>
+            <h2 style="margin:0">Daftar Pemenang</h2>
+          </div>
+          <div class="controls">
+            <input class="input" id="search" placeholder="Cari nama/NIK/departemen">
+          </div>
+        </div>
+        <div class="tablewrap">
+          <table id="table">
+            <thead>
+              <tr>
+                <th data-key="no">No</th>
+                <th data-key="nik">NIK</th>
+                <th data-key="nama">Nama</th>
+                <th data-key="dept">Departemen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>6501202301</td><td>Andi Pratama</td><td><span class="badgeDept">Operasi</span></td></tr>
+              <tr><td>2</td><td>6501202302</td><td>Siti Nurhaliza</td><td><span class="badgeDept">Pemeliharaan</span></td></tr>
+              <tr><td>3</td><td>6501202303</td><td>Budi Santoso</td><td><span class="badgeDept">Manajemen Energi</span></td></tr>
+              <tr><td>4</td><td>6501202304</td><td>Dewi Lestari</td><td><span class="badgeDept">Keuangan</span></td></tr>
+              <tr><td>5</td><td>6501202305</td><td>Rizky Ramadhan</td><td><span class="badgeDept">HR</span></td></tr>
+              <tr><td>6</td><td>6501202306</td><td>Nadia Putri</td><td><span class="badgeDept">IT</span></td></tr>
+              <tr><td>7</td><td>6501202307</td><td>Agus Setiawan</td><td><span class="badgeDept">Logistik</span></td></tr>
+              <tr><td>8</td><td>6501202308</td><td>Rahmawati</td><td><span class="badgeDept">Produksi</span></td></tr>
+              <tr><td>9</td><td>6501202309</td><td>Yusuf Kurniawan</td><td><span class="badgeDept">Operasi</span></td></tr>
+              <tr><td>10</td><td>6501202310</td><td>Melati Ayu</td><td><span class="badgeDept">Pemeliharaan</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="footer">
+          <div class="pager">
+            <button id="prev">Sebelumnya</button>
+            <button id="next">Berikutnya</button>
+          </div>
+          <div class="stat" id="stat"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="emojiRain"></div>
+  <audio id="bgm" src="assets/queen_champions.m4a" preload="auto"></audio>
+  <script src="script.js"></script>
+  <div class="made">Made with ⚡ Energy Team</div>
+</body>
+</html>
