@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pengumuman Pemenang Training Online Efisiensi Energi 2025</title>
+  <meta name="description" content="Pengumuman pemenang Training Online Efisiensi Energi 2025">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stage">
+    <div class="grad"></div>
+    <div class="stars"></div>
+    <div class="grid"></div>
+    <div class="scanlines"></div>
+  </div>
+  <div id="emojiRain"></div>
+  <div class="container">
+    <section id="home" class="section active">
+      <div class="card hero">
+        <div>
+          <h1 class="title">Selamat kepada <span class="shine">Pemenang Training Online Efisiensi Energi 2025</span></h1>
+          <p class="lead">Terima kasih atas partisipasi dan semangat belajar Anda. Mari bersama wujudkan operasional yang efisien, berkelanjutan, dan berdampak positif.</p>
+          <div class="cta">
+            <a class="btn" id="btnWinners" href="page2.html">Lihat Pemenang</a>
+          </div>
+        </div>
+        <div class="visual">
+          <img class="hero-photo" src="assets/energiteam.png" alt="Foto">
+          <div class="badge"><span class="dotx"></span> Energy Commite PT Pratama Abadi Industri</div>
+        </div>
+      </div>
+    </section>
+    <audio id="bgm" src="assets/queen_champions.m4a" preload="auto"></audio>
+  <script>
+    const rain=document.getElementById('emojiRain');
+    (function(){ if(!rain) return; const list=['🎉','✨','🚀','🔋','⚡','🌟','🎊','💡','🪐']; for(let i=0;i<26;i++){ const s=document.createElement('span'); s.className='emo'; s.textContent=list[Math.floor(Math.random()*list.length)]; s.style.left=Math.random()*100+'%'; s.style.fontSize=(18+Math.random()*18)+'px'; s.style.animationDuration=(6+Math.random()*6)+'s'; s.style.animationDelay=(Math.random()*4)+'s'; rain.appendChild(s) } })();
+    (function(){ const img=document.querySelector('.hero-photo'); if(!img) return; let t=0,dx=0,dy=0; function loop(){ const ix=Math.sin(t/700)*0.6; const iy=Math.cos(t/900)*0.5; img.style.transform=`translate(${(dx+ix)*8}px,${(dy+iy)*6}px) scale(1.02)`; t+=16; requestAnimationFrame(loop) } window.addEventListener('mousemove',e=>{ dx=(e.clientX/window.innerWidth-.5)*1.2; dy=(e.clientY/window.innerHeight-.5)*1.0 }); window.addEventListener('touchmove',e=>{ const t=e.touches[0]; dx=(t.clientX/window.innerWidth-.5)*1.2; dy=(t.clientY/window.innerHeight-.5)*1.0 },{passive:true}); window.addEventListener('deviceorientation',e=>{ dx=(e.gamma||0)/90; dy=(e.beta||0)/180 }); loop() })();
+    (function(){ const a=document.getElementById('bgm'); if(!a) return; a.loop=true; a.volume=0.5; const p=a.play(); if(p&&typeof p.catch==='function'){ p.catch(()=>{ const kick=()=>{ a.play(); document.removeEventListener('pointerdown',kick); document.removeEventListener('keydown',kick); document.removeEventListener('touchstart',kick) }; document.addEventListener('pointerdown',kick); document.addEventListener('keydown',kick); document.addEventListener('touchstart',kick,{passive:true}) }) } })();
+    (function(){ const link=document.getElementById('btnWinners'); if(!link) return; const go=()=>{ window.location.href='page2.html' }; link.addEventListener('click',go); link.addEventListener('touchend',go,{passive:true}); })();
+  </script>
+  </div>
+  <div class="made">Made with ⚡ Energy Team</div>
+  
+</body>
+</html>
