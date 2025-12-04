@@ -6,6 +6,7 @@
   <title>Pengumuman Pemenang Training Online Efisiensi Energi 2025</title>
   <meta name="description" content="Pengumuman pemenang Training Online Efisiensi Energi 2025">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="audio" href="assets/queen_champions.m4a">
 </head>
 <body>
   <div class="stage">
@@ -31,7 +32,7 @@
         </div>
       </div>
     </section>
-    <audio id="bgm" src="assets/queen_champions.m4a" preload="auto"></audio>
+    <audio id="bgm" src="assets/queen_champions.m4a" preload="auto" playsinline></audio>
   <script>
     const rain=document.getElementById('emojiRain');
     (function(){ if(!rain) return; const list=['🎉','✨','🚀','🔋','⚡','🌟','🎊','💡','🪐']; for(let i=0;i<26;i++){ const s=document.createElement('span'); s.className='emo'; s.textContent=list[Math.floor(Math.random()*list.length)]; s.style.left=Math.random()*100+'%'; s.style.fontSize=(18+Math.random()*18)+'px'; s.style.animationDuration=(6+Math.random()*6)+'s'; s.style.animationDelay=(Math.random()*4)+'s'; rain.appendChild(s) } })();

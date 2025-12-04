@@ -6,6 +6,7 @@
   <title>Daftar Pemenang • Efisiensi Energi 2025</title>
   <meta name="description" content="Daftar pemenang Training Online Efisiensi Energi 2025">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="audio" href="assets/queen_champions.m4a">
 </head>
 <body>
   <div class="stage">
@@ -20,10 +21,13 @@
   <div class="container">
     <section class="section active">
       <div class="card winners">
+        <div class="champion">
+          <span class="cup">🏆</span>
+          <span class="label">Pemenang TO Efisiensi Energi</span>
+        </div>
         <div class="header">
           <div style="display:flex;gap:12px;align-items:center">
             <button class="btn secondary" id="btnBack">Kembali</button>
-            <h2 style="margin:0">Daftar Pemenang</h2>
           </div>
           <div class="controls">
             <input class="input" id="search" placeholder="Cari nama/NIK/departemen">
@@ -74,7 +78,7 @@
     </section>
   </div>
   <div id="emojiRain"></div>
-  <audio id="bgm" src="assets/queen_champions.m4a" preload="auto"></audio>
+  <audio id="bgm" src="assets/queen_champions.m4a" preload="auto" playsinline></audio>
   <script src="script.js"></script>
   <div class="made">Made with ⚡ Energy Team</div>
 </body>
